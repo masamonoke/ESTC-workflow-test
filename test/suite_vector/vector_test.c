@@ -45,9 +45,6 @@ TEST(vector, AddVector) {
     vector3_set_values_xyz(v1, 10, 10, 10);
     vector3_set_values_xyz(v2, 1.01f, 114, -3.23f);
     vector3_add_vector(v1, v2);
-    /*TEST_ASSERT_EQUAL_FLOAT(v1->x, expected.x);
-    TEST_ASSERT_EQUAL_FLOAT(v1->y, expected.y);
-    TEST_ASSERT_EQUAL_FLOAT(v1->z, expected.z);*/
     TEST_ASSERT_EQUAL_FLOAT(expected.x, v1->x);
     TEST_ASSERT_EQUAL_FLOAT(expected.y, v1->y);
     TEST_ASSERT_EQUAL_FLOAT(expected.z, v1->z);
