@@ -65,5 +65,5 @@ void vector3_set_values_xyz(Vector3* this, float x, float y, float z) {
 }
 
 void vector3_print(Vector3* this) {
-    printf("(x=%f, y=%f, z=%f)\n", this->x, this->y, this->z);
+    printf("Vector3: (x=%f, y=%f, z=%f)\n", this->x, this->y, this->z);
 }
