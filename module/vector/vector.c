@@ -36,12 +36,6 @@ void vector3_add_vector(Vector3* this, Vector3* other) {
     this->z += other->z;
 }
 
-void vector3_set_opposite(Vector3* this) {
-    this->x = -this->x;
-    this->y = -this->y;
-    this->z = -this->z;
-}
-
 void vector3_sub_value(Vector3* this, float val) {
     vector3_add_value(this, -val);
 }
@@ -54,10 +48,6 @@ void vector3_sub_vector(Vector3* this, Vector3* other) {
 
 float vector3_dot(Vector3* this, Vector3* other) {
     return this->x * other->x + this->y * other->y + this->z * other->z;
-}
-
-float vector3_magnitude(Vector3* this) {
-    return sqrtf(this->x * this->x + this->y * this->y + this->z * this->z);
 }
 
 Vector3* vector3_cross(Vector3* this, Vector3* other) {
