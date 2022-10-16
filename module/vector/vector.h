@@ -23,11 +23,7 @@ void vector3_sub_vector(Vector3* this, Vector3* other);
 
 float vector3_dot(Vector3* this, Vector3* other);
 
-float vector3_magnitude(Vector3* this);
-
 Vector3* vector3_cross(Vector3* this, Vector3* other);
-
-void vector3_set_opposite(Vector3* this);
 
 void vector3_set_values_xyz(Vector3* this, float x, float y, float z);
 

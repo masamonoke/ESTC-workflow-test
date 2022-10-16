@@ -1,7 +1,6 @@
 #include "vector.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
 
 Vector3* vector3_init() {
     return vector3_init_with_values(0, 0, 0);
