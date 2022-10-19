@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+struct vector3_t {
+    float x;
+    float y;
+    float z;
+};
+
 Vector3* vector3_init() {
     return vector3_init_with_values(0, 0, 0);
 }
@@ -65,4 +71,28 @@ void vector3_set_values_xyz(Vector3* this, float x, float y, float z) {
 
 void vector3_print(Vector3* this) {
     printf("Vector3: (x=%f, y=%f, z=%f)\n", this->x, this->y, this->z);
+}
+
+float vector3_get_x(Vector3* this) {
+    return this->x;
+}
+
+float vector3_get_y(Vector3* this) {
+    return this->y;
+}
+
+float vector3_get_z(Vector3* this) {
+    return this->z;
+}
+
+void vector3_set_x(Vector3* this, float v) {
+    this->x = v;
+}
+
+void vector3_set_y(Vector3* this, float v) {
+    this->y = v;
+}
+
+void vector3_set_z(Vector3* this, float v) {
+    this->z = v;
 }

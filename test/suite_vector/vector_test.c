@@ -14,53 +14,57 @@ TEST_SETUP(vector) {
 TEST_TEAR_DOWN(vector) {}
 
 TEST(vector, AddValueToVector) {
-    Vector3 expected;
-    expected.x = 11;
-    expected.y = 11;
-    expected.z = 11;
+    Vector3* expected = vector3_init();
+    vector3_set_x(expected, 11);
+    vector3_set_y(expected, 11);
+    vector3_set_z(expected, 11);
     vector3_set_values_xyz(v1, 10, 10, 10);
     vector3_add_value(v1, 1);
-    TEST_ASSERT_EQUAL(v1->x, expected.x);
-    TEST_ASSERT_EQUAL(v1->y, expected.y);
-    TEST_ASSERT_EQUAL(v1->z, expected.z);
+    TEST_ASSERT_EQUAL(vector3_get_x(v1), vector3_get_x(expected));
+    TEST_ASSERT_EQUAL(vector3_get_y(v1), vector3_get_y(expected));
+    TEST_ASSERT_EQUAL(vector3_get_z(v1), vector3_get_z(expected));
+    vector3_free(expected);
 }
 
 TEST(vector, SubValueFromVector) {
-    Vector3 expected;
-    expected.x = 9;
-    expected.y = 9;
-    expected.z = 9;
+    Vector3* expected = vector3_init();
+    vector3_set_x(expected, 9);
+    vector3_set_y(expected, 9);
+    vector3_set_z(expected, 9);
     vector3_set_values_xyz(v1, 10, 10, 10);
     vector3_sub_value(v1, 1);
-    TEST_ASSERT_EQUAL_FLOAT(v1->x, expected.x);
-    TEST_ASSERT_EQUAL_FLOAT(v1->y, expected.y);
-    TEST_ASSERT_EQUAL_FLOAT(v1->z, expected.z);
+    TEST_ASSERT_EQUAL(vector3_get_x(v1), vector3_get_x(expected));
+    TEST_ASSERT_EQUAL(vector3_get_y(v1), vector3_get_y(expected));
+    TEST_ASSERT_EQUAL(vector3_get_z(v1), vector3_get_z(expected));
+    vector3_free(expected);
 }
 
 TEST(vector, AddVector) {
-    Vector3 expected;
-    expected.x = 11.01f;
-    expected.y = 124;
-    expected.z = 6.77f;
+    Vector3* expected = vector3_init();
+    vector3_set_x(expected, 11.01f);
+    vector3_set_y(expected, 124);
+    vector3_set_z(expected, 6.77f);
     vector3_set_values_xyz(v1, 10, 10, 10);
     vector3_set_values_xyz(v2, 1.01f, 114, -3.23f);
     vector3_add_vector(v1, v2);
-    TEST_ASSERT_EQUAL_FLOAT(expected.x, v1->x);
-    TEST_ASSERT_EQUAL_FLOAT(expected.y, v1->y);
-    TEST_ASSERT_EQUAL_FLOAT(expected.z, v1->z);
+    TEST_ASSERT_EQUAL(vector3_get_x(v1), vector3_get_x(expected));
+    TEST_ASSERT_EQUAL(vector3_get_y(v1), vector3_get_y(expected));
+    TEST_ASSERT_EQUAL(vector3_get_z(v1), vector3_get_z(expected));
+    vector3_free(expected);
 }
 
 TEST(vector, SubVector) {
-    Vector3 expected;
-    expected.x = 8.99f;
-    expected.y = -104;
-    expected.z = 13.23f;
+    Vector3* expected = vector3_init();
+    vector3_set_x(expected, 8.99f);
+    vector3_set_y(expected, -104);
+    vector3_set_z(expected, 13.23f);
     vector3_set_values_xyz(v1, 10, 10, 10);
     vector3_set_values_xyz(v2, 1.01f, 114, -3.23f);
     vector3_sub_vector(v1, v2);
-    TEST_ASSERT_EQUAL_FLOAT(expected.x, v1->x);
-    TEST_ASSERT_EQUAL_FLOAT(expected.y, v1->y);
-    TEST_ASSERT_EQUAL_FLOAT(expected.z, v1->z);
+    TEST_ASSERT_EQUAL(vector3_get_x(v1), vector3_get_x(expected));
+    TEST_ASSERT_EQUAL(vector3_get_y(v1), vector3_get_y(expected));
+    TEST_ASSERT_EQUAL(vector3_get_z(v1), vector3_get_z(expected));
+    vector3_free(expected);
 }
 
 TEST(vector, DotProduct) {
@@ -72,14 +76,15 @@ TEST(vector, DotProduct) {
 }
 
 TEST(vector, CrossProduct) {
-    Vector3 expected;
-    expected.x = -3;
-    expected.y = 6;
-    expected.z = -3;
+    Vector3* expected = vector3_init();
+    vector3_set_x(expected, -3);
+    vector3_set_y(expected, 6);
+    vector3_set_z(expected, -3);
     vector3_set_values_xyz(v1, 1, 2, 3);
     vector3_set_values_xyz(v2, 4, 5, 6);
     Vector3* given = vector3_cross(v1, v2);
-    TEST_ASSERT_EQUAL_FLOAT(expected.x, given->x);
-    TEST_ASSERT_EQUAL_FLOAT(expected.y, given->y);
-    TEST_ASSERT_EQUAL_FLOAT(expected.z, given->z);
+    TEST_ASSERT_EQUAL(vector3_get_x(given), vector3_get_x(expected));
+    TEST_ASSERT_EQUAL(vector3_get_y(given), vector3_get_y(expected));
+    TEST_ASSERT_EQUAL(vector3_get_z(given), vector3_get_z(expected));
+    vector3_free(expected);
 }
